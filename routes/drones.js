@@ -30,7 +30,7 @@ const { name, propellers, maxSpeed } = req.body
 
   try {
     
-    const newDrone = await Drone.create({
+    await Drone.create({
       name: name,
       propellers: propellers,
       maxSpeed: maxSpeed
@@ -62,7 +62,7 @@ router.post('/drones/:id/edit', async (req, res, next) => {
   const { name, propellers, maxSpeed } = req.body
   try {
     
-    const updateDrone = await Drone.findByIdAndUpdate(req.params.id, {
+    await Drone.findByIdAndUpdate(req.params.id, {
       name: name,
       propellers: propellers,
       maxSpeed: maxSpeed
